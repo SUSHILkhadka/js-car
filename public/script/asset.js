@@ -18,7 +18,7 @@ function car3(){
     carimage.style.width=toPx(widthOfCar);
     carimage.style.height=toPx(heightOfCar);
     carimage.style.backgroundColor='white';
-    carimage.style.background="url(../assets/carsprite.jpg) -120px -190px";
+    carimage.style.background="url(../assets/carsprite.jpg) -120px -188px";
     return carimage;
 }
 

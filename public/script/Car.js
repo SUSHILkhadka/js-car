@@ -44,14 +44,13 @@ class Car {
 
     }
 
-            /**
-         * shows current score,highest score. Also store in local storage if current score is highest
-         */
+    /**
+ * shows current score,highest score. Also store in local storage if current score is highest
+ */
     showScore() {
-        let highestScore=localStorage.getItem('highestScore') ? localStorage.getItem('highestScore') : 0;
-        if(this.score>highestScore)
-        {
-        localStorage.setItem('highestScore',this.score);
+        let highestScore = localStorage.getItem('highestScore') ? localStorage.getItem('highestScore') : 0;
+        if (this.score > highestScore) {
+            localStorage.setItem('highestScore', this.score);
         }
         this.scoreDiv.innerHTML = `Your Score:${this.score}&nbsp&nbsp&nbsp&nbsp Record:${highestScore}`;
 
@@ -119,7 +118,7 @@ class Car {
                     }.bind(this), 1000 / 60)
                 }
 
-                
+
             }
         }.bind(this))
 
@@ -172,26 +171,25 @@ class Car {
 
     outofScreenCheck(botcarArray, i) {
         if (this.top > heightOfRoad) {
-            this.respawn(botcarArray,i);
+            this.respawn(botcarArray, i);
         }
     }
 
-        /**
-     * 
-     * @param {*} botcarArray this is array of all bot cars
-     * @param {*} i present object indedx
-     * respawns bot cars with space in y axis spacing, ranging from '0/1/2' * 'height of car'
-     */
-    respawn(botcarArray,i){
-        if (i == 0) {
-            this.top = firstRespawnOffset;
-            this.left = threeCenterSpots[Math.round(generateRandom(0, 2))]
-        }
-        else {
-            let topGap = Math.round(generateRandom(1, 5));
-            let smallerOffset=botcarArray[i - 1].top<firstRespawnOffset?botcarArray[i - 1].top:firstRespawnOffset;
-            this.top = smallerOffset- (topGap + 1) * heightOfCar;
+    /**
+ * 
+ * @param {*} botcarArray this is array of all bot cars
+ * @param {*} i present object indedx
+ * respawns bot cars with space in y axis spacing, ranging from '0/1/2' * 'height of car'
+ */
+    respawn(botcarArray, i) {
+        let topGap = Math.round(generateRandom(2, 5));
+        if (i >= 1) {
+            let calculated = botcarArray[i - 1].top - (topGap) * heightOfCar;
+            this.top = calculated > firstRespawnOffset - heightOfCar ? firstRespawnOffset - heightOfCar : calculated;
             this.left = threeCenterSpots[Math.round(generateRandom(0, 2))];
+        }
+        if (this.top - botcarArray[i - 1] < 1 * heightOfCar) {
+            this.top = botcarArray[i - 1] - 3 * heightOfCar;
         }
 
     }

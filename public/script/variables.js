@@ -16,7 +16,7 @@
   */
  
  var speed = 3;
- var sensitivity = speed*2;
+ var sensitivity = speed*100;
  var roadmovement=0;
  var envObjSpeed=roadmovement;
  

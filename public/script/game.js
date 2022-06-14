@@ -101,9 +101,10 @@ function play() {
      * Environmental objects speed matches road lane speed, in following manner
      * All these parameters can to be fine tuned further.
      */
-    speed = (playercar.score / 130 + 1) * 3;
+    speed = (playercar.score /20+ 1) * 3;
     roadmovement = 15 / (playercar.score + 1)
     envObjSpeed = 15 / roadmovement;
+    sensitivity=speed*3;
 
     gamewindow.style.animation = `carMove linear ${roadmovement}s infinite`;
 
