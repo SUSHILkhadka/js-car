@@ -1,0 +1,56 @@
+*{
+    font-size: 24px;
+}
+
+body{
+    background-color: greenyellow;
+}
+.startmenu{
+font-size: 50px;
+text-align: center;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+#startbutton{
+    align-items: center;
+}
+
+#backbutton{
+    display: none;
+}
+
+.gamewindow{
+    max-width: 1400px;
+    width: 500px;
+    height: 800px;
+    display: none;
+    position: relative;
+    z-index: -1;
+    margin: 0rem auto;
+    overflow-y: clip;
+
+    background: url("../assets/roadlan.png") ;
+    background-repeat: repeat-y;
+    background-size: 100%  100px;
+    animation: carMove linear 10s infinite;
+}
+
+
+@keyframes carMove
+{
+    0%{
+        background-position: 0 -1000px;
+
+    }
+    100%{
+        background-position: 0 -10px;
+
+    }
+}
+
+.gameover{
+    text-align: center;
+    display: none;
+}
