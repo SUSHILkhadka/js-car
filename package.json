@@ -1,0 +1,23 @@
+{
+  "name": "js-carousel",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SUSHILkhadka/js-car.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SUSHILkhadka/js-car/issues"
+  },
+  "homepage": "https://github.com/SUSHILkhadka/js-car#readme",
+  "description": ""
+}
